@@ -17,6 +17,9 @@ class Brewery(models.Model):
                                                # instead. CharField makes as
                                                # much sense as anything.
 
+    def __unicode__(self):
+        return self.name
+
 
 class Beer(models.Model):
 
@@ -29,6 +32,9 @@ class Beer(models.Model):
     style = models.CharField(max_length=25)
     pic = models.ImageField(upload_to='beer/')
     abv = models.FloatField()
+
+    def __unicode__(self):
+        return self.name
 
 
 class Review(models.Model):
@@ -53,3 +59,6 @@ class Review(models.Model):
     pic = models.ImageField(upload_to='review/')
     container = models.CharField(max_length=3, choices=CONTAINER_CHOICES)
     volume = models.CharField(max_length=15)
+
+    def __unicode__(self):
+        return '{0} / {1}'.format(self.beer, self.date)
