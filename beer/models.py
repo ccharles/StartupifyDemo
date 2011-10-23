@@ -9,13 +9,12 @@ class Brewery(models.Model):
 
     name = models.CharField(max_length=100)
     location = models.CharField(max_length=200)
-    pic = models.ImageField(upload_to='brewery/')
-    website = models.CharField(max_length=200) # Apparently the URLField type
-                                               # has been deprecated as of
-                                               # Django 1.3.1, but it is
-                                               # unclear what should be used
-                                               # instead. CharField makes as
-                                               # much sense as anything.
+    pic = models.ImageField(upload_to='brewery/', blank=True)
+
+    # Apparently the URLField type has been deprecated as of Django 1.3.1,
+    # but it is unclear what should be used instead. CharField makes as much
+    # sense as anything.
+    website = models.CharField(max_length=200, blank=True)
 
     def __unicode__(self):
         return self.name
@@ -30,7 +29,7 @@ class Beer(models.Model):
     name = models.CharField(max_length=100)
     brewery = models.ForeignKey(Brewery)
     style = models.CharField(max_length=25)
-    pic = models.ImageField(upload_to='beer/')
+    pic = models.ImageField(upload_to='beer/', blank=True)
     abv = models.FloatField()
 
     def __unicode__(self):
@@ -56,7 +55,7 @@ class Review(models.Model):
     date = models.DateField()
     content = models.TextField()
     rating = models.PositiveIntegerField()
-    pic = models.ImageField(upload_to='review/')
+    pic = models.ImageField(upload_to='review/', blank=True)
     container = models.CharField(max_length=3, choices=CONTAINER_CHOICES)
     volume = models.CharField(max_length=15)
 
