@@ -3,7 +3,7 @@ from django.contrib import admin
 
 
 class BeerAdmin(admin.ModelAdmin):
-    list_display = ('name', 'brewery', 'abv', 'style')
+    list_display = ('name', 'brewery', 'abv', 'style', 'external_rating')
 
 
 admin.site.register(Brewery)

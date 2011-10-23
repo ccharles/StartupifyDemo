@@ -36,9 +36,20 @@ class Beer(models.Model):
     style = models.CharField(max_length=25)
     pic = models.ImageField(upload_to='beer/', blank=True)
     abv = models.FloatField(verbose_name='ABV')
+    beeradvocate_rating = models.CharField(max_length=10, blank=True)
+    ratebeer_rating = models.CharField(max_length=10, blank=True)
 
     def __unicode__(self):
         return self.name
+
+    def external_rating(self):
+        """
+        Return a string combining the RateBeer and BeerAdvocate ratings.
+
+        If either rating is unavailable, use 'N/A'.
+        """
+        return 'BA: {0}, RB: {1}'.format(self.beeradvocate_rating or 'N/A',
+                                         self.ratebeer_rating or 'N/A')
 
 
 class Review(models.Model):
