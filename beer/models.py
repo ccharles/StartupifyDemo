@@ -18,11 +18,11 @@ class Brewery(models.Model):
     # sense as anything.
     website = models.CharField(max_length=200, blank=True)
 
-    def __unicode__(self):
-        return self.name
-
     class Meta:
         verbose_name_plural = 'Breweries'
+
+    def __unicode__(self):
+        return self.name
 
 
 class Beer(models.Model):
