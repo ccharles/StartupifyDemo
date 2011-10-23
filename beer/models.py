@@ -21,6 +21,9 @@ class Brewery(models.Model):
     def __unicode__(self):
         return self.name
 
+    class Meta:
+        verbose_name_plural = 'Breweries'
+
 
 class Beer(models.Model):
 
@@ -32,7 +35,7 @@ class Beer(models.Model):
     brewery = models.ForeignKey(Brewery)
     style = models.CharField(max_length=25)
     pic = models.ImageField(upload_to='beer/', blank=True)
-    abv = models.FloatField()
+    abv = models.FloatField(verbose_name='ABV')
 
     def __unicode__(self):
         return self.name
@@ -58,7 +61,8 @@ class Review(models.Model):
     content = models.TextField()
     rating = models.PositiveIntegerField()
     pic = models.ImageField(upload_to='review/', blank=True)
-    container = models.CharField(max_length=3, choices=CONTAINER_CHOICES)
+    container = models.CharField(max_length=3, choices=CONTAINER_CHOICES,
+                                 verbose_name='Format')
     volume = models.CharField(max_length=15)
 
     def __unicode__(self):
