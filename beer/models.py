@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from django.db import models
 
 
@@ -52,7 +54,7 @@ class Review(models.Model):
     )
 
     beer = models.ForeignKey(Beer)
-    date = models.DateField()
+    date = models.DateField(default=datetime.now())
     content = models.TextField()
     rating = models.PositiveIntegerField()
     pic = models.ImageField(upload_to='review/', blank=True)
