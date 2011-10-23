@@ -4,6 +4,7 @@ from django.contrib import admin
 
 class BeerAdmin(admin.ModelAdmin):
     list_display = ('name', 'brewery', 'abv', 'style', 'external_rating')
+    search_fields = ['name']
 
 
 class ReviewAdmin(admin.ModelAdmin):
