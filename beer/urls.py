@@ -5,4 +5,5 @@ urlpatterns = patterns('beer.views',
     # url(r'^$', 'startupifydemo.views.home', name='home'),
     # url(r'^startupifydemo/', include('startupifydemo.foo.urls')),
     url(r'^brewery/(?P<brewery_id>\d+)/$', 'brewery'),
+    url(r'^beer/(?P<beer_id>\d+)/$', 'beer'),
 )
