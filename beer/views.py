@@ -1,4 +1,4 @@
-from beer.models import Brewery, Beer
+from beer.models import Brewery, Beer, Review
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render_to_response
 
@@ -10,3 +10,7 @@ def brewery(request, brewery_id):
 def beer(request, beer_id):
     b = get_object_or_404(Beer, pk=beer_id)
     return render_to_response('beer/beer.html', {'beer': b})
+
+def review(request, review_id):
+    r = get_object_or_404(Review, pk=review_id)
+    return render_to_response('beer/review.html', {'review': r})
