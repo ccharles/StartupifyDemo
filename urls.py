@@ -4,18 +4,12 @@ from django.conf.urls.defaults import patterns, include, url
 from django.contrib import admin
 admin.autodiscover()
 
-urlpatterns = patterns('beer.views',
-    # Examples:
-    # url(r'^$', 'startupifydemo.views.home', name='home'),
-    # url(r'^startupifydemo/', include('startupifydemo.foo.urls')),
-    url(r'^brewery/(?P<brewery_id>\d+)/$', 'brewery'),
-)
-
-urlpatterns += patterns('',
-
+urlpatterns = patterns('',
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
+
+    url(r'', include('beer.urls')),
 )
