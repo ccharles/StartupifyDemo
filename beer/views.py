@@ -5,6 +5,11 @@ from django.shortcuts import get_object_or_404, render_to_response
 from django.template import RequestContext
 
 
+def index(request):
+    latest_reviews = Review.objects.order_by('-date')[:5]
+    return render_to_response('beer/index.html',
+                              {'latest_reviews': latest_reviews})
+
 def brewery(request, brewery_id):
     b = get_object_or_404(Brewery, pk=brewery_id)
     return render_to_response('beer/brewery.html', {'brewery': b})
