@@ -1,22 +1,9 @@
-from beer.models import Brewery, Beer, Review, ReviewComment
+from beer.models import Review, ReviewComment
 from django.core.urlresolvers import reverse
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render_to_response
 from django.template import RequestContext
 
-
-def index(request):
-    latest_reviews = Review.objects.order_by('-date')[:5]
-    return render_to_response('beer/index.html',
-                              {'latest_reviews': latest_reviews})
-
-def brewery(request, brewery_id):
-    b = get_object_or_404(Brewery, pk=brewery_id)
-    return render_to_response('beer/brewery.html', {'brewery': b})
-
-def beer(request, beer_id):
-    b = get_object_or_404(Beer, pk=beer_id)
-    return render_to_response('beer/beer.html', {'beer': b})
 
 def review(request, review_id):
     r = get_object_or_404(Review, pk=review_id)
