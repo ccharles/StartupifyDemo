@@ -16,6 +16,9 @@ urlpatterns = patterns('',
         DetailView.as_view(
             model=Beer,
             template_name='beer/beer.html')),
+)
+
+urlpatterns += patterns('beer.views',
     url(r'^review/(?P<review_id>\d+)/$', 'review'),
     url(r'^review/(?P<review_id>\d+)/comment/$', 'review_comment'),
 )
