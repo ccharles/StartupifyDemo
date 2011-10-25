@@ -7,4 +7,5 @@ urlpatterns = patterns('beer.views',
     url(r'^brewery/(?P<brewery_id>\d+)/$', 'brewery'),
     url(r'^beer/(?P<beer_id>\d+)/$', 'beer'),
     url(r'^review/(?P<review_id>\d+)/$', 'review'),
+    url(r'^review/(?P<review_id>\d+)/comment/$', 'review_comment'),
 )
