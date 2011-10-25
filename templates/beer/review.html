@@ -4,3 +4,11 @@
 {{ review.content }}<br/>
 <br/>
 TL;DR: {{ review.rating }}<br/>
+<br/>
+Comments<br/>
+{% for comment in comments %}
+{{ comment.author }}<br/>
+{{ comment.timestamp }}<br/>
+{{ comment.content }}<br/>
+<br/>
+{% endfor %}

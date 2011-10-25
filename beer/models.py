@@ -78,3 +78,21 @@ class Review(models.Model):
 
     def __unicode__(self):
         return '{0} / {1}'.format(self.beer, self.date)
+
+
+class ReviewComment(models.Model):
+
+    """
+    Model for a comment on a review.
+    """
+
+    class Meta:
+        verbose_name = 'Comment'
+
+    review = models.ForeignKey(Review)
+    author = models.CharField(max_length=50)
+    timestamp = models.DateTimeField(auto_now=True)
+    content = models.TextField()
+
+    def __unicode__(self):
+        return 'Comment on {0}'.format(self.review)

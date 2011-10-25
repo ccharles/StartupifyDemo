@@ -1,4 +1,4 @@
-from beer.models import Brewery, Beer, Review
+from beer.models import Brewery, Beer, Review, ReviewComment
 from django.contrib import admin
 
 
@@ -15,3 +15,4 @@ class ReviewAdmin(admin.ModelAdmin):
 admin.site.register(Brewery)
 admin.site.register(Beer, BeerAdmin)
 admin.site.register(Review, ReviewAdmin)
+admin.site.register(ReviewComment)
