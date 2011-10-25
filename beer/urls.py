@@ -17,6 +17,11 @@ urlpatterns = patterns('',
         DetailView.as_view(
             model=Brewery,
             template_name='beer/brewery.html')),
+    url(r'^beer/$',
+        ListView.as_view(
+            queryset=Beer.objects.order_by('name'),
+            context_object_name='beers',
+            template_name='beer/beers.html')),
     url(r'^beer/(?P<pk>\d+)/$',
         DetailView.as_view(
             model=Beer,
