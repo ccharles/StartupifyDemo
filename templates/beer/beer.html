@@ -1,1 +1,5 @@
-{{ beer.name }} ({{ beer.brewery.name }})
+{% extends "beer/base.html" %}
+
+{% block content %}
+{{ beer.name }} (<a href="/brewery/{{ beer.brewery.id }}/">{{ beer.brewery.name }}</a>)
+{% endblock %}

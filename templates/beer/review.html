@@ -1,11 +1,13 @@
-{{ review.beer.name }}<br/>
-{{ review.date }}<br/>
-<br/>
-{{ review.content }}<br/>
-<br/>
-TL;DR: {{ review.rating }}<br/>
-<br/>
-Comments<br/>
+{% extends "beer/base.html" %}
+
+{% block content %}
+<h2><a href="/beer/{{ review.beer.id }}/">{{ review.beer.name }}</a> (<a href="/brewery/{{ review.beer.brewery.id }}/">{{ review.beer.brewery.name }}</a>)</h2>
+<p>Reviewed on {{ review.date }}</p>
+<p>{{ review.content }}</p>
+<p>TL;DR: {{ review.rating }}</p>
+<p>External ratings: {{ review.beer.external_rating }}
+
+<h3>Comments</h3>
 {% if error_message %}<p style="color: red;">{{ error_message }}</p>{% endif %}
 <form action="/review/{{ review.id }}/comment/" method="post">
   {% csrf_token %}
@@ -14,9 +16,11 @@ Comments<br/>
   <textarea id="content" name="content" rows="10" cols="60"></textarea><br/>
   <input type="submit" value="Submit comment" />
 </form>
+
 {% for comment in comments %}
-{{ comment.author }}<br/>
-{{ comment.timestamp }}<br/>
-{{ comment.content }}<br/>
-<br/>
+
+<p>{{ comment.author }} on {{ comment.timestamp }}</p>
+<p>{{ comment.content }}</p>
+
 {% endfor %}
+{% endblock %}
