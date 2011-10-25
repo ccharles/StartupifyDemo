@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chris on Beer - {% block title %}Home{% endblock %}</title>
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css">
+  </head>
+
+  <body>
+    <div id="header">
+      <h1>Chris on Beer</h1>
+    </div>
+
+    <div id="main">
+      {% block content %}Mmm&#x2026; delicious content&#x2026;{% endblock %}
+    </div>
+  </body>
+</html>

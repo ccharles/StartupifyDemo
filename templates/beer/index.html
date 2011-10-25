@@ -1,3 +1,10 @@
+{% extends 'beer/base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h2>Latest reviews</h2>
 {% for review in latest_reviews %}
-{{ review }}<br/>
+<a href="/review/{{ review.id }}/">{{ review }}</a><br/>
 {% endfor %}
+{% endblock %}
