@@ -5,6 +5,7 @@ from django.shortcuts import get_object_or_404, render_to_response
 from django.template import RequestContext
 
 
+
 def review(request, review_id):
     r = get_object_or_404(Review, pk=review_id)
     comments = ReviewComment.objects.filter(review=r)
@@ -12,6 +13,7 @@ def review(request, review_id):
     return render_to_response('beer/review.html',
                               {'review': r, 'comments': comments},
                               context_instance=RequestContext(request))
+
 
 def review_comment(request, review_id):
     r = get_object_or_404(Review, pk=review_id)
