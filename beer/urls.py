@@ -8,6 +8,11 @@ urlpatterns = patterns('',
             queryset=Review.objects.order_by('-date')[:5],
             context_object_name='latest_reviews',
             template_name='beer/index.html')),
+    url(r'^brewery/$',
+        ListView.as_view(
+            queryset=Brewery.objects.order_by('name'),
+            context_object_name='breweries',
+            template_name='beer/breweries.html')),
     url(r'^brewery/(?P<pk>\d+)/$',
         DetailView.as_view(
             model=Brewery,

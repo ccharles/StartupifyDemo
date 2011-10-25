@@ -1,0 +1,12 @@
+{% extends "beer/base.html" %}
+
+{% block content %}
+
+<ol>
+  <h2>Brewery list</h2>
+{% for brewery in breweries %}
+  <li><a href="/brewery/{{ brewery.id }}/">{{ brewery.name }}</a></li>
+{% endfor %}
+</ol>
+
+{% endblock %}
