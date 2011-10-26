@@ -48,6 +48,18 @@ div#main {
     padding: 20px;
 }
 
+div#main p.date {
+    font-style: italic;
+    margin-bottom: 1em;
+}
+
+div#main div.content {
+    background-color: #eee;
+    border: 1px solid #ccc;
+    margin-top: 1em;
+    padding: 1em;
+}
+
 div#main ol li {
     margin-left: 2em;
 }
