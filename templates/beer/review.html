@@ -3,6 +3,7 @@
 {% block content %}
 <h2><a href="/beer/{{ review.beer.id }}/">{{ review.beer.name }}</a> (<a href="/brewery/{{ review.beer.brewery.id }}/">{{ review.beer.brewery.name }}</a>)</h2>
 <p>Reviewed on {{ review.date }}</p>
+<p>{{ review.volume }} {{ review.container }}</p>
 <p>{{ review.content }}</p>
 <p>TL;DR: {{ review.rating }}</p>
 <p>External ratings: {{ review.beer.external_rating }}
