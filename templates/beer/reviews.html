@@ -1,0 +1,12 @@
+{% extends "beer/base.html" %}
+
+{% block content %}
+
+<ol>
+  <h2>Review list</h2>
+{% for review in reviews %}
+  <li><a href="/review/{{ review.id }}/">{{ review }}</a></li>
+{% endfor %}
+</ol>
+
+{% endblock %}

@@ -26,6 +26,11 @@ urlpatterns = patterns('',
         DetailView.as_view(
             model=Beer,
             template_name='beer/beer.html')),
+    url(r'^review/$',
+        ListView.as_view(
+            queryset=Review.objects.order_by('-date'),
+            context_object_name='reviews',
+            template_name='beer/reviews.html')),
 )
 
 urlpatterns += patterns('beer.views',
