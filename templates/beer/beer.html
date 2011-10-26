@@ -2,7 +2,7 @@
 
 {% block content %}
 <h2>{{ beer.name }} (<a href="/brewery/{{ beer.brewery.id }}/">{{ beer.brewery.name }}</a>)</h2>
-<p>ABV: {{ beer.abv }}%</p>
-<p>Style: {{ beer.style }}</p>
-<p>External ratings: {{ beer.external_rating }}</p>
+<p><strong>ABV:</strong> {{ beer.abv }}%</p>
+<p><strong>Style:</strong> {{ beer.style }}</p>
+<p><strong>External ratings:</strong> {{ beer.external_rating }}</p>
 {% endblock %}
