@@ -2,6 +2,7 @@
 
 {% block content %}
 <h2>{{ beer.name }} (<a href="/brewery/{{ beer.brewery.id }}/">{{ beer.brewery.name }}</a>)</h2>
+{% if beer.pic %}<img src="{{ STATIC_URL }}{{ beer.pic }}">{% endif %}
 <p><strong>ABV:</strong> {{ beer.abv }}%</p>
 <p><strong>Style:</strong> {{ beer.style }}</p>
 <p><strong>External ratings:</strong> {{ beer.external_rating }}</p>
