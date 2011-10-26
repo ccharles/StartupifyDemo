@@ -1,5 +1,8 @@
 {% extends "beer/base.html" %}
 
 {% block content %}
-{{ beer.name }} (<a href="/brewery/{{ beer.brewery.id }}/">{{ beer.brewery.name }}</a>)
+<h2>{{ beer.name }} (<a href="/brewery/{{ beer.brewery.id }}/">{{ beer.brewery.name }}</a>)</h2>
+<p>ABV: {{ beer.abv }}%</p>
+<p>Style: {{ beer.style }}</p>
+<p>External ratings: {{ beer.external_rating }}</p>
 {% endblock %}
