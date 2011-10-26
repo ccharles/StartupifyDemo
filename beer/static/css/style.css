@@ -52,6 +52,17 @@ div#main ol li {
     margin-left: 2em;
 }
 
+div.comment {
+    background-color: #eee;
+    border-top: 1px solid #ccc;
+    margin: 0.5em;
+    padding: 1em;
+}
+
+div.comment p.author {
+    font-weight: bold;
+}
+
 div#sidebar {
     border: 1px solid #ccc;
     display: inline;

@@ -7,7 +7,9 @@
 <p>{{ review.content }}</p>
 <p>TL;DR: {{ review.rating }}</p>
 <p>External ratings: {{ review.beer.external_rating }}
+{% endblock %}
 
+{% block sidebar %}
 <h3>Comments</h3>
 {% if error_message %}<p style="color: red;">{{ error_message }}</p>{% endif %}
 <form action="/review/{{ review.id }}/comment/" method="post">
@@ -19,9 +21,9 @@
 </form>
 
 {% for comment in comments %}
-
-<p>{{ comment.author }} on {{ comment.timestamp }}</p>
-<p>{{ comment.content }}</p>
-
+<div class="comment">
+<p class="author">{{ comment.author }} on {{ comment.timestamp }}</p>
+<p class="content">{{ comment.content }}</p>
+</div>
 {% endfor %}
 {% endblock %}
