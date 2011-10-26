@@ -1,5 +1,7 @@
 {% extends "beer/base.html" %}
 
 {% block content %}
-{{ brewery.name }}
+<h2>{{ brewery.name }}</h2>
+<p>Location: {{ brewery.location }}</p>
+{% if brewery.website %}<p>Website: <a href="{{ brewery.website }}">{{ brewery.website }}</a></p>{% endif %}
 {% endblock %}
