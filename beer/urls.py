@@ -34,6 +34,6 @@ urlpatterns = patterns('',
 )
 
 urlpatterns += patterns('beer.views',
-    url(r'^review/(?P<review_id>\d+)/(?:[-a-zA-Z0-9]+/)?$', 'review'),
     url(r'^review/(?P<review_id>\d+)/comment/$', 'review_comment'),
+    url(r'^review/(?P<review_id>\d+)/(?:[-a-zA-Z0-9]+/)?$', 'review'),
 )
