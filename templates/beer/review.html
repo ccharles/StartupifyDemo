@@ -1,7 +1,8 @@
 {% extends "beer/base.html" %}
+{% load beer_extras %}
 
 {% block content %}
-<h2><a href="/beer/{{ review.beer.id }}/">{{ review.beer.name }}</a> (<a href="/brewery/{{ review.beer.brewery.id }}/">{{ review.beer.brewery.name }}</a>)</h2>
+<h2><a href="/beer/{{ review.beer.id }}/{{ review.beer.name|seo_friendlify }}/">{{ review.beer.name }}</a> (<a href="/brewery/{{ review.beer.brewery.id }}/{{ review.beer.brewery.name|seo_friendlify }}/">{{ review.beer.brewery.name }}</a>)</h2>
 <p class="date">Reviewed on {{ review.date }}; {{ review.volume }} {{ review.get_container_display.lower }}</p>
 <p><strong>TL;DR:</strong> {{ review.rating }} / 100</p>
 <p><strong>External ratings:</strong> {{ review.beer.external_rating }}</p>

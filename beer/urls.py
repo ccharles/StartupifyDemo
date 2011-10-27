@@ -13,7 +13,7 @@ urlpatterns = patterns('',
             queryset=Brewery.objects.order_by('name'),
             context_object_name='breweries',
             template_name='beer/breweries.html')),
-    url(r'^brewery/(?P<pk>\d+)/$',
+    url(r'^brewery/(?P<pk>\d+)/(?:[-a-zA-Z0-9]+/)?$',
         DetailView.as_view(
             model=Brewery,
             template_name='beer/brewery.html')),
@@ -22,7 +22,7 @@ urlpatterns = patterns('',
             queryset=Beer.objects.order_by('name'),
             context_object_name='beers',
             template_name='beer/beers.html')),
-    url(r'^beer/(?P<pk>\d+)/$',
+    url(r'^beer/(?P<pk>\d+)/(?:[-a-zA-Z0-9]+/)?$',
         DetailView.as_view(
             model=Beer,
             template_name='beer/beer.html')),
@@ -34,6 +34,6 @@ urlpatterns = patterns('',
 )
 
 urlpatterns += patterns('beer.views',
-    url(r'^review/(?P<review_id>\d+)/$', 'review'),
+    url(r'^review/(?P<review_id>\d+)/(?:[-a-zA-Z0-9]+/)?$', 'review'),
     url(r'^review/(?P<review_id>\d+)/comment/$', 'review_comment'),
 )

@@ -1,7 +1,8 @@
 {% extends "beer/base.html" %}
+{% load beer_extras %}
 
 {% block content %}
-<h2>{{ beer.name }} (<a href="/brewery/{{ beer.brewery.id }}/">{{ beer.brewery.name }}</a>)</h2>
+<h2>{{ beer.name }} (<a href="/brewery/{{ beer.brewery.id }}/{{ beer.brewery.name|seo_friendlify }}/">{{ beer.brewery.name }}</a>)</h2>
 {% if beer.pic %}<img src="{{ STATIC_URL }}{{ beer.pic }}">{% endif %}
 <p><strong>ABV:</strong> {{ beer.abv }}%</p>
 <p><strong>Style:</strong> {{ beer.style }}</p>

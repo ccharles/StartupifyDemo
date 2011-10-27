@@ -1,11 +1,12 @@
 {% extends "beer/base.html" %}
+{% load beer_extras %}
 
 {% block content %}
 
 <ol>
   <h2>Beer list</h2>
 {% for beer in beers %}
-  <li><a href="/beer/{{ beer.id }}/">{{ beer.name }}</a></li>
+  <li><a href="/beer/{{ beer.id }}/{{ beer.name|seo_friendlify }}/">{{ beer.name }}</a></li>
 {% endfor %}
 </ol>
 

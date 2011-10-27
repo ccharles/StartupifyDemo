@@ -1,4 +1,5 @@
 {% extends 'beer/base.html' %}
+{% load beer_extras %}
 
 {% block title %}Home{% endblock %}
 
@@ -13,7 +14,7 @@
 <h2>Latest reviews</h2>
 
 {% for review in latest_reviews %}
-<a href="/review/{{ review.id }}/">{{ review }}</a><br/>
+<a href="/review/{{ review.id }}/{{ review|seo_friendlify }}/">{{ review }}</a><br/>
 {% endfor %}
 
 {% endblock %}
