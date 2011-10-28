@@ -26,10 +26,16 @@ up and running if you've already got Django installed. The standard
 
 should get you up and running. If you have trouble, please let me know.
 
-The database file that ships with the demo contains some sample data to get
-you started playing with the application, but feel free to nuke it and start
-from scratch. If you do this you should probably remove the `media` directory
-as well, which contains uploaded images.
+If you check out the `master` branch you will not have any data. Create the
+database as usual with
+
+    python manage.py syncdb
+
+and then start adding data using the admin interface.
+
+If you prefer to start with some sample data, check out the `data`
+branch. This includes an existing SQLite database and some images in the
+`media/` directory. The superuser account is `chris` / `startupify`.
 
 ## Some things that I used
 
