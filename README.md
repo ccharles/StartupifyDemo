@@ -52,6 +52,7 @@ some additional features as well:
 - Searching, by integrating an existing Django search app.
 - Tagging of reviews via the admin interface, and a tag cloud.
 - Markdown support for review bodies and comments.
+- Actual links to BeerAdvocate and RateBeer.
 
 ## Some things that I'd fix if this was a real site
 
