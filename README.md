@@ -13,6 +13,8 @@ demo submission for [Startupify](http://startupify.me/).
 - The commenting is pretty sparse since most of the code is pretty standard
   Django-type stuff. I don't believe in documenting the framework within my
   code unless something is really weird.
+- The images in the demo site aren't actually of the beers being reviewed. I
+  had to cheat!
 
 ## Running the demo
 
